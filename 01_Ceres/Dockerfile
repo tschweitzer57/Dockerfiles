@@ -10,3 +10,14 @@ RUN apt-get install libgoogle-glog-dev libgflags-dev -y
 RUN apt-get install libatlas-base-dev -y
 RUN apt-get install libeigen3-dev -y
 RUN apt-get install libsuitesparse-dev -y
+RUN apt-get install wget -y
+
+WORKDIR /home
+RUN wget http://ceres-solver.org/ceres-solver-2.2.0.tar.gz
+RUN tar zxf ceres-solver-2.2.0.tar.gz
+RUN mkdir ceres-bin
+
+WORKDIR /home/ceres-bin
+RUN cmake ../ceres-solver-2.2.0
+RUN make -j3
+RUN make install
