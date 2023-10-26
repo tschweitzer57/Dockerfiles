@@ -4,6 +4,7 @@ RUN apt-get update
 RUN ln -fs /usr/share/zoneinfo/Europe/Paris /etc/localtime
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
 RUN dpkg-reconfigure --frontend noninteractive tzdata
+RUN apt-get install g++ -y
 RUN apt-get install cmake -y
 
 RUN apt-get install libgoogle-glog-dev libgflags-dev -y
