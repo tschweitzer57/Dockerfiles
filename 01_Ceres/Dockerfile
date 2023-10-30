@@ -22,3 +22,9 @@ WORKDIR /home/ceres-bin
 RUN cmake ../ceres-solver-2.2.0
 RUN make -j3
 RUN make install
+
+#Cleanning docker image
+WORKDIR /home
+RUN rm -rf ceres-bin
+RUN rm -rf ceres-solver-2.2.0.tar.gz
+RUN rm -rf ceres-solver-2.2.0
