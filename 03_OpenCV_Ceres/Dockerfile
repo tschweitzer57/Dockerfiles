@@ -8,12 +8,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
 RUN dpkg-reconfigure --frontend noninteractive tzdata
 
 RUN apt-get install -y \
-	g++ cmake \
-	libgoogle-glog-dev libgflags-dev libatlas-base-dev libeigen3-dev \
-	libsuitesparse-dev wget git libgtk2.0-dev pkg-config \
-	libavcodec-dev libavformat-dev libswscale-dev \
-	python3-dev python3-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev \
-	libcanberra-gtk-module libcanberra-gtk3-module
+    g++ cmake \
+    libgoogle-glog-dev libgflags-dev libatlas-base-dev libeigen3-dev \
+    libsuitesparse-dev wget git libgtk2.0-dev pkg-config \
+    libavcodec-dev libavformat-dev libswscale-dev \
+    python3-dev python3-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev \
+    libcanberra-gtk-module libcanberra-gtk3-module
 
 # Clone, build and install OpenCV
 RUN git clone https://github.com/opencv/opencv.git && \
